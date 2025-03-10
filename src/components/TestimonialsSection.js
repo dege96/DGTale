@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Sections.css';
+import '@/app/styles/Sections.css';
 
 const TestimonialsSection = () => {
   return (
@@ -9,25 +9,25 @@ const TestimonialsSection = () => {
         <div className="testimonials-grid">
           <div className="testimonial-card">
             <div className="testimonial-content">
-              <p>"De Geer Web Studio 58 levererade en fantastisk webbplats som överträffade våra förväntningar. Professionellt team med stort engagemang!"</p>
+              <p>"Vi är supernöjda med resultatet av vår webbsida! DGTale har varit effektiva och tagit till sig våra egna idéer på ett utmärkt sätt. Vi har haft ett bra samarbete och de har verkligen lyssnat på våra önskemål. Rekommenderas varmt!"</p>
             </div>
             <div className="testimonial-author">
-              <img src="/images/test1.png" alt="Anna Andersson" />
+              <img src="/images/image003.jpg" alt="Picture of Sofie Rydén" />
               <div>
-                <h4>Anna Andersson</h4>
-                <p>VD, TechStart AB</p>
+                <h4>Sofie Rydén</h4>
+                <p>VD, HaSams AB</p>
               </div>
             </div>
           </div>
           <div className="testimonial-card">
             <div className="testimonial-content">
-              <p>"Otroligt nöjd med resultatet! Vår e-handel har sett en markant ökning i försäljning sedan lanseringen av den nya webbplatsen."</p>
+              <p>"Supernöjd med resultatet! Strukturerad & enkel kommunikation."</p>
             </div>
             <div className="testimonial-author">
-              <img src="/images/test2.png" alt="Erik Eriksson" />
+              <img src="/images/johan.jpg" alt="Picture of Johan De Geer" />
               <div>
-                <h4>Erik Eriksson</h4>
-                <p>Grundare, ModeBoutique</p>
+                <h4>Johan De Geer</h4>
+                <p>Grundare, DG Development AB</p>
               </div>
             </div>
           </div>

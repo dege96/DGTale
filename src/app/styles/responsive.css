@@ -1,0 +1,168 @@
+/* Responsivt designsystem för De Geer Web Studios */
+
+/* Media Query Mixins */
+@custom-media --mobile (max-width: 639px);
+@custom-media --tablet (min-width: 640px) and (max-width: 1023px);
+@custom-media --desktop (min-width: 1024px);
+@custom-media --large-desktop (min-width: 1280px);
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  box-sizing: border-box; /* Säkerställer att padding inte ökar bredden */
+}
+
+/* Responsiva hjälpklasser */
+.hide-on-mobile {
+  @media (--mobile) {
+    display: none !important;
+  }
+}
+
+.hide-on-desktop {
+  @media (--desktop) {
+    display: none !important;
+  }
+}
+
+.show-on-mobile {
+  display: none !important;
+  @media (--mobile) {
+    display: block !important;
+  }
+}
+
+/* Flexbox Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Kolumner för olika skärmstorlekar */
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+
+@media (--mobile) {
+  .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+  
+  .container {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+}
+
+@media (--tablet) {
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+}
+
+/* Hamburger-meny för mobil */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--text-white);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+@media (--mobile) {
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Responsiv typografi */
+@media (--mobile) {
+  :root {
+    --text-7xl: 3rem;      /* 48px istället för 72px */
+    --text-6xl: 2.5rem;    /* 40px istället för 60px */
+    --text-5xl: 2rem;      /* 32px istället för 48px */
+    --text-4xl: 1.75rem;   /* 28px istället för 36px */
+    --text-3xl: 1.5rem;    /* 24px istället för 30px */
+    --text-2xl: 1.25rem;   /* 20px istället för 24px */
+  }
+}
+
+/* Responsiva knappar */
+@media (--mobile) {
+  .cta-button, .cta-button-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--text-base);
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  
+  .col {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+} 

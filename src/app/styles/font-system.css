@@ -1,3 +1,11 @@
+/* Futura PT - Light */
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPTLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* Futura PT - Regular */
 @font-face {
   font-family: 'Futura PT';
@@ -22,19 +30,27 @@
   font-style: normal;
 }
 
-/* Futura PT - Bold */
-@font-face {
-  font-family: 'Futura PT';
-  src: url('/fonts/FuturaPTBold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
 /* Futura PT - Heavy */
 @font-face {
   font-family: 'Futura PT';
   src: url('/fonts/FuturaPTHeavy.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Futura PT - Bold */
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPTBold.otf') format('opentype');
   font-weight: 800;
+  font-style: normal;
+}
+
+/* Futura PT - Extra Bold */
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaPTExtraBold.otf') format('opentype');
+  font-weight: 900;
   font-style: normal;
 }
 

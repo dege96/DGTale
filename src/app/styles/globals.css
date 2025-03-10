@@ -1,10 +1,29 @@
 :root {
   /* Primary Colors */
   --primary-black: #231F20;
+  --primary-black-light: #1f1d1d;
+  --primary-white:rgb(204 204 204);
   --secondary-black: #2A2627;
-  --primary-color: #4F46E5;    /* Indigo för primary buttons */
-  --secondary-color: #3F6212;  /* Mörkgrön för secondary buttons */
+  --primary-color: #5d58bb;    /* Indigo för primary buttons */
+  --secondary-color: #587531;  /* Mörkgrön för secondary buttons */
   --tertiary-color: #FFFFFF;   /* Vit för tertiary buttons */
+  --primary-red: #b84040;
+  --primary-gradient: linear-gradient(to right, #EC9141, #EBFACC);
+  --primary-gradient-reverse: linear-gradient(to right, #EBFACC, #EC9141);
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;  /* Mobil */
+  --breakpoint-md: 768px;  /* Större mobil/mindre surfplatta */
+  --breakpoint-lg: 1024px; /* Surfplatta/mindre laptop */
+  --breakpoint-xl: 1280px; /* Laptop */
+  --breakpoint-2xl: 1536px; /* Stor datorskärm */
+
+  /* Layout */
+  --header-height: 80px; /* Justera detta värde till din headers faktiska höjd */
+  --header-height-mobile: 60px; /* Header-höjd på mobil */
+  --container-padding: 2rem;
+  --container-padding-mobile: 1rem;
+  --container-max-width: 1200px;
 
   /* Button Colors */
   --btn-primary-bg: var(--primary-color);
@@ -22,14 +41,15 @@
   /* Text Colors */
   --text-white: #FFFFFF;
   --text-white-muted: rgba(255, 255, 255, 0.8);
-  --text-white-subtle: rgba(255, 255, 255, 0.6);
+  --text-white-subtle: rgba(255, 255, 255, 0.305);
+  --text-black: #231F20;
 
   /* Border Colors */
   --border-light: rgba(255, 255, 255, 0.2);
   --border-medium: rgba(255, 255, 255, 0.3);
 
   /* Overlay Colors */
-  --overlay-dark: rgba(0, 0, 0, 0.8);
+  --overlay-dark: rgba(0, 0, 0, 0.2);
   --overlay-light: rgba(0, 0, 0, 0.5);
 
   /* Shadow Colors */
@@ -46,10 +66,16 @@
   margin: 0;
 }
 
+/* Fix för att förhindra horisontell scrollning */
+body, html {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {

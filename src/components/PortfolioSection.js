@@ -1,31 +1,31 @@
 import React from 'react';
-import '../styles/Sections.css';
+import '@/app/styles/Sections.css';
 
 const PortfolioSection = () => {
   return (
     <section id="portfolio" className="section">
       <div className="section-container">
-        <h2>Portfolio</h2>
+        <h2>Kundcase</h2>
         <div className="portfolio-grid">
           <div className="portfolio-item">
-            <img src="/images/test1.png" alt="Projekt 1" />
-            <div className="portfolio-overlay">
-              <h3>E-handelsplattform</h3>
-              <p>Modern e-handelslösning med fokus på användarupplevelse</p>
+            <img src="/images/hasams.png" alt="Projekt 1" />
+            <div className="portfolio-overlay" onClick={() => window.open('https://hasamsredovisning.se', '_blank')}>
+              <h3>HaSams AB</h3>
+              <p>Redovisningsbyrå i Tyresö</p>
             </div>
           </div>
           <div className="portfolio-item">
-            <img src="/images/test2.png" alt="Projekt 2" />
-            <div className="portfolio-overlay">
-              <h3>Företagshemsida</h3>
-              <p>Responsiv webbplats med elegant design</p>
+            <img src="/images/dgd.png" alt="Projekt 2" />
+            <div className="portfolio-overlay" onClick={() => window.open('https://dg-development.vercel.app/', '_blank')}>
+              <h3>DGD Solutions</h3>
+              <p>Konsultation inom teknisk projektledning, design och tillverkning.</p>
             </div>
           </div>
           <div className="portfolio-item">
-            <img src="/images/test3.png" alt="Projekt 3" />
-            <div className="portfolio-overlay">
-              <h3>Restaurangwebbplats</h3>
-              <p>Interaktiv webbplats med bokningssystem</p>
+            <img src="/images/brown.png" alt="Projekt 3" />
+            <div className="portfolio-overlay" onClick={() => window.open('https://brownvvs-v2-1.vercel.app/', '_blank')}>
+              <h3>Brown VVS</h3>
+              <p>VVS-företag i Saltsjöbaden</p>
             </div>
           </div>
         </div>

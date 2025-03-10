@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
-import '../styles/Sections.css';
+import '@/app/styles/Sections.css';
 
 const ServicesSection = () => {
   return (
@@ -10,7 +10,7 @@ const ServicesSection = () => {
         <div className="services-grid">
           <AnimateOnScroll>
             <div className="service-card">
-              <h3>Webbdesign</h3>
+              <h3>Design</h3>
               <p>Moderna och användarvänliga webbplatser som fångar din målgrupps uppmärksamhet.</p>
             </div>
           </AnimateOnScroll>

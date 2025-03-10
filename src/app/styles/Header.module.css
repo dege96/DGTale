@@ -1,0 +1,255 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-black);
+  box-shadow: 0 2px 4px var(--shadow-dark);
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background-color: rgba(35, 31, 32, 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.navigation {
+  margin-right: 2rem;
+}
+
+.navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-white);
+  transition: width 0.3s ease;
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+  width: 100%;
+}
+
+.navigation a:hover {
+  opacity: 1;
+}
+
+.headerCta {
+  font-family: var(--font-primary);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--text-white);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: var(--font-demi);
+  background-color: var(--text-white);
+  color: var(--primary-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.headerCta:hover {
+  background-color: transparent;
+  color: var(--text-white);
+}
+
+/* Hamburger-meny */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--text-white);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+/* Mobil meny */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-black);
+  z-index: 1000;
+  padding-top: var(--header-height-mobile);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  overflow-x: hidden;
+}
+
+.mobileMenu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileMenu ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  text-align: center;
+}
+
+.mobileMenu a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.mobileMenu .headerCta {
+  margin-top: 2rem;
+}
+
+/* Responsiva stilar för headern */
+@media (max-width: 1024px) {
+  .headerContainer {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .navigation ul {
+    gap: 1rem;
+  }
+  
+  .navigation a {
+    font-size: 0.85rem;
+  }
+  
+  .headerCta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .logo img {
+    height: 40px;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .headerCta {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .mobileMenu {
+    display: flex;
+  }
+}

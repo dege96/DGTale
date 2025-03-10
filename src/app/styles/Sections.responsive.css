@@ -1,0 +1,139 @@
+/* Responsiva stilar för alla sektioner */
+@import './responsive.css';
+
+/* Gemensamma responsiva stilar för sektioner */
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-title h2 {
+  font-family: var(--font-primary);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+.section-title p {
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Responsiva stilar för sektioner */
+@media (max-width: 1280px) {
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section-title h2 {
+    font-size: var(--text-4xl);
+  }
+  
+  .section-title p {
+    font-size: var(--text-lg);
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title h2 {
+    font-size: var(--text-3xl);
+  }
+  
+  .section-title p {
+    font-size: var(--text-base);
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title h2 {
+    font-size: var(--text-2xl);
+  }
+  
+  .section-title p {
+    font-size: var(--text-sm);
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+/* Responsiva stilar för kort och grid-layouts */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--primary-black);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px var(--shadow-dark);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Responsiva stilar för formulär */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--text-base);
+  border-radius: 5px;
+  border: 1px solid var(--border-medium);
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    padding: 0.6rem 0.8rem;
+    font-size: var(--text-sm);
+  }
+} 
