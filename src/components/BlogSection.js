@@ -9,35 +9,35 @@ const BlogSection = () => {
         <div className="blog-grid">
           <article className="blog-post">
             <div className="blog-image">
-              <img src="/images/test1.png" alt="Vikten av en hemsida för småföretag" />
+              <img src="/images/test1.png" alt="17 statistik som visar vikten av smartare webbdesign" />
             </div>
             <div className="blog-content">
-              <h3>Vikten av en Hemsida för Småföretag</h3>
-              <p className="blog-date">Januari 15, 2024</p>
-              <p className="text-large">Upptäck varför en professionell hemsida är avgörande för småföretag i dagens digitala samhälle och hur den kan öka din verksamhets framgång.</p>
-              <a href="/blogg/vikten-av-hemsida" className="read-more">Läs mer</a>
+              <h3>17 statistik som visar vikten av smartare webbdesign</h3>
+              <p className="blog-date">Mars 5, 2024</p>
+              <p className="text-large">Upptäck de övertygande siffrorna som visar varför investeringar i webbdesign och användarupplevelse är avgörande för din framgång online.</p>
+              <a href="/blogg/statistik-webbdesign" className="read-more">Läs mer</a>
             </div>
           </article>
           <article className="blog-post">
             <div className="blog-image">
-              <img src="/images/test2.png" alt="SEO-optimering för nybörjare" />
+              <img src="/images/test2.png" alt="Responsiv Design: En Nödvändighet för Moderna Webbplatser" />
             </div>
             <div className="blog-content">
-              <h3>SEO-optimering för nybörjare</h3>
-              <p className="blog-date">December 25, 2023</p>
-              <p className="text-large">En guide till grundläggande SEO-tekniker som hjälper din webbplats att ranka bättre.</p>
-              <a href="/blogg/seo-optimering-for-nyborjare" className="read-more">Läs mer</a>
-            </div>
-          </article>
-          <article className="blog-post">
-            <div className="blog-image">
-              <img src="/images/test3.png" alt="Responsiv design" />
-            </div>
-            <div className="blog-content">
-              <h3>Responsiv design</h3>
-              <p className="blog-date">December 20, 2023</p>
-              <p className="text-large">Varför responsiv design är avgörande för moderna webbplatser och hur du implementerar det.</p>
+              <h3>Responsiv Design: En Nödvändighet för Moderna Webbplatser</h3>
+              <p className="blog-date">Mars 1, 2024</p>
+              <p className="text-large">Lär dig varför responsiv design är avgörande för moderna webbplatser och hur du implementerar det på bästa sätt.</p>
               <a href="/blogg/responsiv-design" className="read-more">Läs mer</a>
+            </div>
+          </article>
+          <article className="blog-post">
+            <div className="blog-image">
+              <img src="/images/test3.png" alt="Från Koncept till Kod: Bemästra Webbdesignprocessen" />
+            </div>
+            <div className="blog-content">
+              <h3>Från Koncept till Kod: Bemästra Webbdesignprocessen</h3>
+              <p className="blog-date">Februari 20, 2024</p>
+              <p className="text-large">En komplett guide som tar dig genom alla steg i webbdesignprocessen, från planering till lansering.</p>
+              <a href="/blogg/bemastrar-webbdesign" className="read-more">Läs mer</a>
             </div>
           </article>
         </div>

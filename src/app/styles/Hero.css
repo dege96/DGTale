@@ -13,7 +13,6 @@
   background-color: var(--secondary-black);
   color: var(--text-white);
   font-family: var(--font-primary);
-  overflow-x: hidden;
   width: 100%;
   border-bottom: var(--debug-border);
 }
@@ -213,7 +212,6 @@
   
   .hero-container {
     height: calc(100vh - var(--header-height));
-    margin-top: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: center;

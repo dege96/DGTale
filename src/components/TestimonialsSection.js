@@ -15,19 +15,19 @@ const TestimonialsSection = () => {
               <img src="/images/image003.jpg" alt="Picture of Sofie Rydén" />
               <div>
                 <h4>Sofie Rydén</h4>
-                <p>VD, HaSams AB</p>
+                <p>Ägare, HaSams AB</p>
               </div>
             </div>
           </div>
           <div className="testimonial-card">
             <div className="testimonial-content">
-              <p>"Supernöjd med resultatet! Strukturerad & enkel kommunikation."</p>
+              <p>"Supernöjd med resultatet!"</p>
             </div>
             <div className="testimonial-author">
               <img src="/images/johan.jpg" alt="Picture of Johan De Geer" />
               <div>
                 <h4>Johan De Geer</h4>
-                <p>Grundare, DG Development AB</p>
+                <p>Ägare, DG Development AB</p>
               </div>
             </div>
           </div>
@@ -38,8 +38,8 @@ const TestimonialsSection = () => {
             <div className="testimonial-author">
               <img src="/images/test3.png" alt="Maria Svensson" />
               <div>
-                <h4>Maria Svensson</h4>
-                <p>Marknadschef, RestaurangGruppen</p>
+                <h4>Ulrika Brown</h4>
+                <p>Ägare, Brown VVS</p>
               </div>
             </div>
           </div>

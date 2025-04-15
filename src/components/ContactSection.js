@@ -19,7 +19,7 @@ const ContactSection = () => {
               <a href="https://www.linkedin.com/in/victor-de-geer/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <img src="/images/linkedin.png" alt="LinkedIn" />
               </a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://www.instagram.com/dgtalesweden/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <img src="/images/instagram.png" alt="Instagram" />
               </a>
             </div>

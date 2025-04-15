@@ -44,7 +44,7 @@ const PricingSection = () => {
               <li>Grundläggande SEO</li>
             </ul>
             <button className="btn btn-primary btn-full" onClick={() => handleButtonClick('Tillväxt-paket')}>Välj paket</button>
-            <p className="price-description">Passar: Företag med 1–5 anställda. </p>
+            <p className="price-description">Passar: Etablerade småföretag. </p>
 
           </div>
           

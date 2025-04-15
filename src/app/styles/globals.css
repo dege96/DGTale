@@ -20,7 +20,7 @@
 
   /* Layout */
   --header-height: 80px; /* Justera detta värde till din headers faktiska höjd */
-  --header-height-mobile: 60px; /* Header-höjd på mobil */
+  --header-height-mobile: 80px; /* Header-höjd på mobil */
   --container-padding: 2rem;
   --container-padding-mobile: 1rem;
   --container-max-width: 1200px;
@@ -68,7 +68,6 @@
 
 /* Fix för att förhindra horisontell scrollning */
 body, html {
-  overflow-x: hidden;
   position: relative;
   width: 100%;
 }
