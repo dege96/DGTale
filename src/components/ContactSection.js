@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@/app/styles/Sections.css';
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'startup',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Skapa e-postlänk och öppna den i ett nytt fönster
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(`Namn: ${formData.name}\nE-post: ${formData.email}\n\nMeddelande: ${formData.message}`);
+    
+    window.location.href = `mailto:victor@dgtale.se?subject=${subject}&body=${body}`;
+    
+    // Återställ formuläret efter skickat
+    setFormData({
+      name: '',
+      email: '',
+      subject: 'startup',
+      message: ''
+    });
+  };
+
   return (
     <section id="kontakt" className="section">
       <div className="section-container">
@@ -24,18 +57,37 @@ const ContactSection = () => {
               </a>
             </div>
           </div>
-          <form className="contact-form" action="mailto:victor@dgtale.se" method="post" encType="text/plain">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Namn</label>
-              <input type="text" id="name" name="name" required />
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                value={formData.name}
+                onChange={handleChange}
+                required 
+              />
             </div>
             <div className="form-group">
               <label htmlFor="email">E-post</label>
-              <input type="email" id="email" name="email" required />
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value={formData.email}
+                onChange={handleChange}
+                required 
+              />
             </div>
             <div className="form-group">
               <label htmlFor="subject">Ämne</label>
-              <select id="subject" name="subject">
+              <select 
+                id="subject" 
+                name="subject" 
+                value={formData.subject}
+                onChange={handleChange}
+              >
                 <option value="startup">Startup-paket</option>
                 <option value="growth">Tillväxt-paket</option>
                 <option value="enterprise">Enterprise-paket</option>
@@ -44,7 +96,14 @@ const ContactSection = () => {
             </div>
             <div className="form-group">
               <label htmlFor="message">Meddelande</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
             </div>
             <button type="submit" className="submit-btn">Skicka meddelande</button>
           </form>
