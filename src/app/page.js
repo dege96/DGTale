@@ -19,7 +19,6 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ServicesSection />
-      <PricingSection />
       <PortfolioSection />
       <BlogSection />
       <TestimonialsSection />

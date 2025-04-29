@@ -1,0 +1,151 @@
+body {
+  background-color: var(--secondary-black);
+}
+
+.service-content {
+  max-width: 800px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+.service-description {
+  background-color: var(--primary-black);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 6px var(--shadow-dark);
+  animation: fadeInUp 1.2s ease-in-out forwards;
+  will-change: opacity, transform, filter;
+}
+
+.service-description h1 {
+  font-family: var(--font-primary);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+  color: var(--text-white);
+}
+
+.lead-text {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  color: var(--text-white-muted);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.service-features, 
+.process-section {
+  margin-top: 2.5rem;
+}
+
+.service-description h2 {
+  font-family: var(--font-primary);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+}
+
+.service-description h3 {
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  margin: 2rem 0 1rem;
+  color: var(--text-white);
+}
+
+.service-description p {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-white-muted);
+  opacity: 0.9;
+}
+
+.service-description ul,
+.service-description ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.service-description li {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: var(--text-white-muted);
+  opacity: 0.9;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.process-step {
+  background-color: var(--secondary-black);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.process-step h3 {
+  margin-top: 0;
+}
+
+.process-step p {
+  margin-bottom: 0;
+}
+
+.cta-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--secondary-black);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.cta-section h3 {
+  color: var(--text-white);
+  margin-bottom: 1rem;
+  font-size: var(--text-xl);
+}
+
+.cta-section p {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsiva stilar */
+@media (max-width: 768px) {
+  .service-content {
+    margin: 100px auto 40px;
+    padding: 0 15px;
+  }
+
+  .service-description {
+    padding: 30px 20px;
+  }
+
+  .service-description h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .service-description h2 {
+    font-size: var(--text-xl);
+  }
+
+  .service-description h3 {
+    font-size: var(--text-lg);
+  }
+
+  .service-description p,
+  .service-description li {
+    font-size: var(--text-base);
+  }
+  
+  .process-step {
+    padding: 1rem;
+  }
+} 
