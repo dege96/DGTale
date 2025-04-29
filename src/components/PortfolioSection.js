@@ -1,5 +1,6 @@
 import React from 'react';
 import '@/app/styles/Sections.css';
+import Image from 'next/image';
 
 const PortfolioSection = () => {
   return (
@@ -8,7 +9,13 @@ const PortfolioSection = () => {
         <h2>Kundcase</h2>
         <div className="portfolio-grid">
           <div className="portfolio-item">
-            <img src="/images/hasams.png" alt="Hasams AB - Redovisningsbyrå i Tyresö" />
+            <Image 
+              src="/images/hasams.png" 
+              alt="Hasams AB - Redovisningsbyrå i Tyresö"
+              width={500}
+              height={300}
+              layout="responsive" 
+            />
             <div className="portfolio-overlay" onClick={() => window.open('https://hasamsredovisning.se', '_blank')}>
               <h3>HaSams AB</h3>
               <p>Redovisningsbyrå i Tyresö</p>

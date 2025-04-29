@@ -18,8 +18,8 @@ const AboutSection = () => {
 
                 <p>
                   DGTale AB grundades utifrån en enkel men kraftfull idé: att skapa hemsidor som 
-                  människor <strong>faktiskt vill använda</strong>. Sidor som inte bara är visuellt tilltalande, 
-                  utan <strong>intuitiva</strong>, <strong>tillgängliga</strong> och <strong>anpassade för verkliga behov</strong>.
+                  människor faktiskt vill använda. Sidor som inte bara är visuellt tilltalande, 
+                  utan intuitiva, tillgängliga och <strong>anpassade för verkliga behov</strong>.
                 </p>
 
                 <p>
@@ -35,7 +35,7 @@ const AboutSection = () => {
 
                 <p>
                   Med fokus på <strong>användarvänlighet</strong>, <strong>tydlig kommunikation</strong> och 
-                  <strong> tidlös design</strong> hjälper DGTale företag att bygga starka digitala plattformar. 
+                  <strong> livfull design</strong> hjälper DGTale företag att bygga starka digitala plattformar. 
                   Hemsidor som fungerar – på riktigt.
                 </p>
               </div>

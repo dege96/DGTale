@@ -1,3 +1,5 @@
+@import './typography.css';
+
 :root {
   /* Primary Colors */
   --primary-black: #231F20;
@@ -83,4 +85,12 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+p {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: var(--font-light);
 }
