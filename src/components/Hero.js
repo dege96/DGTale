@@ -11,8 +11,8 @@ const Hero = () => {
              <br /> FÖR SMÅFÖRETAGARE </h1>
           <p>Professionella och användarvänliga hemsidor för småföretag – byggda för att attrahera kunder och växa med din verksamhet. Snabba, snygga och <b>skräddarsydda för dina behov</b>. Vi tar hand om allt, så att du kan fokusera på ditt företag.</p>
           <div className="button-container">
-            <button className="cta-button-secondary">Kom igång</button>
-            <button className="cta-button">Kundcase</button>
+            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka möte</a>
+            {/* <a href="portfolio" target="_blank" rel="noopener noreferrer" className="cta-button" style={{textDecoration: 'none'}}>Kundcase</a> */}
           </div>
         </div>
         <div className="hero-laptop">
