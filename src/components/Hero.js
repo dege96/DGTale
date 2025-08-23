@@ -21,7 +21,7 @@ const Hero = () => {
     b.textContent = words[(index + 1) % words.length];
 
     gsap.set(a, { opacity: 1, y: 0 });
-    gsap.set(b, { opacity: 0, y: 10 });
+    gsap.set(b, { opacity: 0, y: 12 });
 
     const cycle = () => {
       const current = showingA ? a : b;
@@ -30,8 +30,8 @@ const Hero = () => {
       next.textContent = words[index];
 
       const tl = gsap.timeline();
-      tl.to(current, { y: -10, opacity: 0, duration: 0.5, ease: 'power3.inOut' }, 0)
-        .fromTo(next, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.inOut' }, 0);
+      tl.to(current, { y: -12, opacity: 0, duration: 0.6, ease: 'power3.inOut' }, 0)
+        .fromTo(next, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.inOut' }, 0);
 
       showingA = !showingA;
     };
@@ -46,11 +46,9 @@ const Hero = () => {
           <div className="hero-content">
             <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
             <h1>
-              <span className="text-primary">
-                <span className="rotating-wrapper">
-                  <span ref={aRef} className="rotating-keyword">WEBBUTVECKLING</span>
-                  <span ref={bRef} className="rotating-keyword"></span>
-                </span>
+              <span className="rotating-wrapper">
+                <span ref={aRef} className="rotating-keyword text-primary">WEBBUTVECKLING</span>
+                <span ref={bRef} className="rotating-keyword text-primary"></span>
               </span>
               <br /> FÖR SMÅFÖRETAGARE
             </h1>

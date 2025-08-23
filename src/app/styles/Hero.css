@@ -172,11 +172,12 @@
   transform: translateY(-2px);
 } 
 
-/* Rotating keyword wrapper to keep layout stable */
+/* Rotating headline keywords */
 .rotating-wrapper {
-  position: relative;
   display: inline-block;
-  min-width: 12ch; /* reserve space to avoid layout shift */
+  position: relative;
+  min-width: 14ch; /* reserve width to avoid layout shift */
+  height: 1em;     /* one line height */
 }
 
 .rotating-keyword {
@@ -185,6 +186,14 @@
   top: 0;
   white-space: nowrap;
   will-change: opacity, transform;
+}
+
+/* Ensure gradient text applies consistently */
+.rotating-keyword.text-primary {
+  background-image: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Responsiva stilar för Hero-sektionen */
