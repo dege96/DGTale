@@ -1,17 +1,58 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import '@/app/styles/Hero.css';
+import { gsap } from 'gsap';
 
 const Hero = () => {
+  const rotatingRef = useRef(null);
+
+  useEffect(() => {
+    const el = rotatingRef.current;
+    if (!el) return;
+
+    const words = ['WEBBUTVECKLING', 'SYSTEMLÖSNINGAR', 'AUTOMATION', 'DESIGN'];
+    let index = 0;
+
+    el.textContent = words[index];
+    gsap.set(el, { opacity: 1, y: 0 });
+
+    const cycle = () => {
+      gsap.to(el, {
+        y: -10,
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        onComplete: () => {
+          index = (index + 1) % words.length;
+          el.textContent = words[index];
+          gsap.fromTo(
+            el,
+            { y: 10, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.35, ease: 'power2.out' }
+          );
+        },
+      });
+    };
+
+    const intervalId = setInterval(cycle, 2200);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
           <div className="hero-content">
             <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
-            <h1><span className="text-primary">WEBBUTVECKLING </span>
-             <br /> FÖR SMÅFÖRETAGARE </h1>
-          <p>Professionella och användarvänliga hemsidor för småföretag – byggda för att attrahera kunder och växa med din verksamhet. Snabba, snygga och <b>skräddarsydda för dina behov</b>. Vi tar hand om allt, så att du kan fokusera på ditt företag.</p>
+            <h1>
+              <span className="text-primary">
+                <span ref={rotatingRef} className="rotating-keyword">WEBBUTVECKLING</span>
+              </span>
+              <br /> FÖR SMÅFÖRETAGARE
+            </h1>
+          <p>Vi designar och utvecklar lösningar, system och hemsidor som attraherar kunder och växer med din verksamhet.</p>
           <div className="button-container">
-            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka möte</a>
+            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka kostnadsfritt möte</a>
             {/* <a href="portfolio" target="_blank" rel="noopener noreferrer" className="cta-button" style={{textDecoration: 'none'}}>Kundcase</a> */}
           </div>
         </div>
