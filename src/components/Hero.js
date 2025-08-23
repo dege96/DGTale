@@ -5,37 +5,38 @@ import '@/app/styles/Hero.css';
 import { gsap } from 'gsap';
 
 const Hero = () => {
-  const rotatingRef = useRef(null);
+  const aRef = useRef(null);
+  const bRef = useRef(null);
 
   useEffect(() => {
-    const el = rotatingRef.current;
-    if (!el) return;
+    const a = aRef.current;
+    const b = bRef.current;
+    if (!a || !b) return;
 
     const words = ['WEBBUTVECKLING', 'SYSTEMLÖSNINGAR', 'AUTOMATION', 'DESIGN'];
     let index = 0;
+    let showingA = true;
 
-    el.textContent = words[index];
-    gsap.set(el, { opacity: 1, y: 0 });
+    a.textContent = words[index];
+    b.textContent = words[(index + 1) % words.length];
+
+    gsap.set(a, { opacity: 1, y: 0 });
+    gsap.set(b, { opacity: 0, y: 10 });
 
     const cycle = () => {
-      gsap.to(el, {
-        y: -10,
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.out',
-        onComplete: () => {
-          index = (index + 1) % words.length;
-          el.textContent = words[index];
-          gsap.fromTo(
-            el,
-            { y: 10, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.35, ease: 'power2.out' }
-          );
-        },
-      });
+      const current = showingA ? a : b;
+      const next = showingA ? b : a;
+      index = (index + 1) % words.length;
+      next.textContent = words[index];
+
+      const tl = gsap.timeline();
+      tl.to(current, { y: -10, opacity: 0, duration: 0.5, ease: 'power3.inOut' }, 0)
+        .fromTo(next, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.inOut' }, 0);
+
+      showingA = !showingA;
     };
 
-    const intervalId = setInterval(cycle, 2200);
+    const intervalId = setInterval(cycle, 2600);
     return () => clearInterval(intervalId);
   }, []);
 
@@ -46,11 +47,14 @@ const Hero = () => {
             <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
             <h1>
               <span className="text-primary">
-                <span ref={rotatingRef} className="rotating-keyword">WEBBUTVECKLING</span>
+                <span className="rotating-wrapper">
+                  <span ref={aRef} className="rotating-keyword">WEBBUTVECKLING</span>
+                  <span ref={bRef} className="rotating-keyword"></span>
+                </span>
               </span>
               <br /> FÖR SMÅFÖRETAGARE
             </h1>
-          <p>Vi designar och utvecklar lösningar, system och hemsidor som attraherar kunder och växer med din verksamhet.</p>
+          <p>Skräddarsydda, professionella och användarvänliga lösningar som attraherar kunder.</p>
           <div className="button-container">
             <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka kostnadsfritt möte</a>
             {/* <a href="portfolio" target="_blank" rel="noopener noreferrer" className="cta-button" style={{textDecoration: 'none'}}>Kundcase</a> */}

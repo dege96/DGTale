@@ -172,6 +172,21 @@
   transform: translateY(-2px);
 } 
 
+/* Rotating keyword wrapper to keep layout stable */
+.rotating-wrapper {
+  position: relative;
+  display: inline-block;
+  min-width: 12ch; /* reserve space to avoid layout shift */
+}
+
+.rotating-keyword {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  will-change: opacity, transform;
+}
+
 /* Responsiva stilar för Hero-sektionen */
 @media (max-width: 1280px) {
   .hero-content {
