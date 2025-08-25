@@ -44,7 +44,7 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
+            <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT UTVECKLAD</div>
             <h1>
               <span className="rotating-wrapper">
                 <span ref={aRef} className="rotating-keyword text-primary">WEBBUTVECKLING</span>

@@ -22,7 +22,7 @@ const ContactSection = () => {
     
     // Skapa e-postlänk och öppna den i ett nytt fönster
     const subject = encodeURIComponent(formData.subject);
-    const body = encodeURIComponent(`Namn: ${formData.name}\nE-post: ${formData.email}\n\nMeddelande: ${formData.message}`);
+    const body = encodeURIComponent(`${formData.message}`);
     
     window.location.href = `mailto:victor@dgtale.se?subject=${subject}&body=${body}`;
     
@@ -44,12 +44,12 @@ const ContactSection = () => {
             <h3>Kontaktinformation</h3>
             <p><strong>Adress:</strong> Vetevägen 22, 187 69 Täby</p>
             <p><strong>Telefon:</strong> 0761914617</p>
-            <p><strong>E-post:</strong> victor@dgtale.se</p>
+            <p><strong>E-post:</strong> <a href="mailto:victor@dgtale.se" style={{ color: 'inherit', textDecoration: 'none' }}>victor@dgtale.se</a></p>
             <div className="social-links">
               <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <img src="/images/facebook.png" alt="Facebook" />
               </a>
-              <a href="https://www.linkedin.com/in/victor-de-geer/" target="_blank" rel="noopener noreferrer" className="social-link">
+              <a href="https://www.linkedin.com/company/dgtale-stockholm-ab/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <img src="/images/linkedin.png" alt="LinkedIn" />
               </a>
               <a href="https://www.instagram.com/dgtalesweden/" target="_blank" rel="noopener noreferrer" className="social-link">
@@ -59,26 +59,6 @@ const ContactSection = () => {
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Namn</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={formData.name}
-                onChange={handleChange}
-                required 
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">E-post</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={formData.email}
-                onChange={handleChange}
-                required 
-              />
             </div>
             <div className="form-group">
               <label htmlFor="subject">Ämne</label>

@@ -4,7 +4,7 @@
   /* Primary Colors */
   --primary-black: #231F20;
   --primary-black-light: #1f1d1d;
-  --primary-white:rgb(204 204 204);
+  --primary-white:rgb(227, 226, 226);
   --secondary-black: #2A2627;
   --primary-color: #5d58bb;    /* Indigo för primary buttons */
   --secondary-color: #587531;  /* Mörkgrön för secondary buttons */
@@ -51,7 +51,9 @@
   --border-medium: rgba(255, 255, 255, 0.3);
 
   /* Overlay Colors */
-  --overlay-dark: rgba(0, 0, 0, 0.2);
+  --overlay-dark-20: rgba(0, 0, 0, 0.2);
+  --overlay-dark: rgba(0, 0, 0, 0.4);
+  --overlay-dark-60: rgba(0, 0, 0, 0.6);
   --overlay-light: rgba(0, 0, 0, 0.5);
 
   /* Shadow Colors */

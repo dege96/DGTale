@@ -3,9 +3,9 @@ import '@/app/styles/Sections.css';
 
 const TestimonialsSection = () => {
   return (
-    <section id="kundrecensioner" className="section">
+    <section id="referenser" className="section">
       <div className="section-container">
-        <h2>Kundrecensioner</h2>
+        <h2>Referenser</h2>
         <div className="testimonials-grid">
           <div className="testimonial-card">
             <div className="testimonial-content">

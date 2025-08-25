@@ -9,13 +9,7 @@ const PortfolioSection = () => {
         <h2>Kundcase</h2>
         <div className="portfolio-grid">
           <div className="portfolio-item">
-            <Image 
-              src="/images/hasams.png" 
-              alt="Hasams AB - Redovisningsbyrå i Tyresö"
-              width={500}
-              height={300}
-              layout="responsive" 
-            />
+            <img src="/images/hasams.png" alt="Hasams AB - Redovisningsbyrå i Tyresö" />
             <div className="portfolio-overlay" onClick={() => window.open('https://hasamsredovisning.se', '_blank')}>
               <h3>HaSams AB</h3>
               <p>Redovisningsbyrå i Tyresö</p>

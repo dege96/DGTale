@@ -88,7 +88,7 @@ export default function Header() {
       <div className={styles.headerContainer}>
         <div className={styles.logo}>
           <Link href="/">
-            <img src="/images/logo_no_undertext.svg" alt="De Geer Web Studios" />
+            <img src="/images/logo.svg" alt="De Geer Web Studios" style={{height: '35px'}}/>
           </Link>
         </div>
         

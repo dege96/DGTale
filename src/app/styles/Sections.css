@@ -13,7 +13,7 @@
 }
 
 .white-section {
-  background-color: var(--overlay-dark) !important;
+  background-color: var(--primary-white) !important;
   color: var(--primary-black) !important;
 }
 
