@@ -1,54 +1,33 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
 import '@/app/styles/Hero.css';
 import { gsap } from 'gsap';
 
 const Hero = () => {
-  const aRef = useRef(null);
-  const bRef = useRef(null);
+  const wordRef = useRef(null);
 
   useEffect(() => {
-    const a = aRef.current;
-    const b = bRef.current;
-    if (!a || !b) return;
+    if (!wordRef.current) return;
 
     const words = ['WEBBUTVECKLING', 'SYSTEMLÖSNINGAR', 'AUTOMATION', 'DESIGN'];
     let index = 0;
-    let showingA = true;
 
-    const applyCentering = () => {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      gsap.set([a, b], { xPercent: isMobile ? -50 : 0 });
-    };
+    const el = wordRef.current;
+    el.textContent = words[index];
 
-    a.textContent = words[index];
-    b.textContent = words[(index + 1) % words.length];
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.8 });
+    tl.to(el, {
+      duration: 0.4,
+      opacity: 0,
+      ease: 'power1.out',
+      onComplete: () => {
+        index = (index + 1) % words.length;
+        el.textContent = words[index];
+      },
+    });
+    tl.to(el, { duration: 0.4, opacity: 1, ease: 'power1.in' });
 
-    applyCentering();
-    gsap.set(a, { opacity: 1, y: 0 });
-    gsap.set(b, { opacity: 0, y: 12 });
-
-    const cycle = () => {
-      const current = showingA ? a : b;
-      const next = showingA ? b : a;
-      index = (index + 1) % words.length;
-      next.textContent = words[index];
-      applyCentering();
-
-      const tl = gsap.timeline();
-      tl.to(current, { y: -12, opacity: 0, duration: 0.6, ease: 'power3.inOut' }, 0)
-        .fromTo(next, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.inOut' }, 0);
-
-      showingA = !showingA;
-    };
-
-    const intervalId = setInterval(cycle, 2600);
-    const onResize = () => applyCentering();
-    window.addEventListener('resize', onResize);
     return () => {
-      clearInterval(intervalId);
-      window.removeEventListener('resize', onResize);
+      tl.kill();
     };
   }, []);
 
@@ -56,17 +35,14 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT UTVECKLAD</div>
+            <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
             <h1>
-              <span className="rotating-wrapper">
-                <span ref={aRef} className="rotating-keyword text-primary">WEBBUTVECKLING</span>
-                <span ref={bRef} className="rotating-keyword text-primary"></span>
-              </span>
+              <span ref={wordRef} className="animated-word text-primary">WEBBUTVECKLING</span>
               <br /> FÖR SMÅFÖRETAGARE
             </h1>
-          <p>Skräddarsydda, professionella och användarvänliga lösningar som attraherar kunder.</p>
+          <p>Vi designar och utvecklar lösningar, system och hemsidor som attraherar kunder och växer med din verksamhet.</p>
           <div className="button-container">
-            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Hör av dig</a>
+            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka kostnadsfritt möte</a>
             {/* <a href="portfolio" target="_blank" rel="noopener noreferrer" className="cta-button" style={{textDecoration: 'none'}}>Kundcase</a> */}
           </div>
         </div>
