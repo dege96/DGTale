@@ -184,20 +184,20 @@
   position: absolute;
   left: 0;
   top: 0;
-  transform: translateX(0);
+  transform: translateX(0); /* desktop default */
   white-space: nowrap;
   will-change: opacity, transform;
 }
 
 @media (max-width: 768px) {
   .rotating-wrapper {
-    display: block;   /* take full line width for proper centering */
+    display: block;
     width: 100%;
-    min-width: 0;     /* let the line width control centering */
+    min-width: 0;
   }
   .rotating-keyword {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* CSS centering; GSAP adds xPercent:-50 to avoid conflicts */
   }
 }
 

@@ -17,9 +17,15 @@ const Hero = () => {
     let index = 0;
     let showingA = true;
 
+    const applyCentering = () => {
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      gsap.set([a, b], { xPercent: isMobile ? -50 : 0 });
+    };
+
     a.textContent = words[index];
     b.textContent = words[(index + 1) % words.length];
 
+    applyCentering();
     gsap.set(a, { opacity: 1, y: 0 });
     gsap.set(b, { opacity: 0, y: 12 });
 
@@ -28,6 +34,7 @@ const Hero = () => {
       const next = showingA ? b : a;
       index = (index + 1) % words.length;
       next.textContent = words[index];
+      applyCentering();
 
       const tl = gsap.timeline();
       tl.to(current, { y: -12, opacity: 0, duration: 0.6, ease: 'power3.inOut' }, 0)
@@ -37,7 +44,12 @@ const Hero = () => {
     };
 
     const intervalId = setInterval(cycle, 2600);
-    return () => clearInterval(intervalId);
+    const onResize = () => applyCentering();
+    window.addEventListener('resize', onResize);
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   return (
@@ -54,7 +66,7 @@ const Hero = () => {
             </h1>
           <p>Skräddarsydda, professionella och användarvänliga lösningar som attraherar kunder.</p>
           <div className="button-container">
-            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Boka kostnadsfritt möte</a>
+            <a href="https://meet.brevo.com/victor-de-geer" target="_blank" rel="noopener noreferrer" className="cta-button-secondary" style={{textDecoration: 'none'}}>Hör av dig</a>
             {/* <a href="portfolio" target="_blank" rel="noopener noreferrer" className="cta-button" style={{textDecoration: 'none'}}>Kundcase</a> */}
           </div>
         </div>
