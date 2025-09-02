@@ -190,6 +190,11 @@
 }
 
 @media (max-width: 768px) {
+  .rotating-wrapper {
+    display: block;   /* take full line width for proper centering */
+    width: 100%;
+    min-width: 0;     /* let the line width control centering */
+  }
   .rotating-keyword {
     left: 50%;
     transform: translateX(-50%);
