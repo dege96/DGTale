@@ -2,41 +2,37 @@ import React from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
 import '@/app/styles/Sections.css';
 import '@/app/styles/typography.css';
+import Link from 'next/link';
 
 const ServicesSection = () => {
+  const categories = [
+    { title: 'Webbutveckling', link: '/webbutveckling' },
+    { title: 'Systemlösningar', link: '#' },
+    { title: 'Automation', link: '#' },
+    { title: 'Design', link: '#' },
+  ];
+
   return (
     <section id="tjanster" className="section">
       <div className="section-container">
         <h2>Vad vi gör</h2>
 
         <div className="services-grid">
-          <AnimateOnScroll>
-            <div className="service-card">
-              <h3>Skräddarsydd design</h3>
-              <p>Unika webbplatser som speglar ditt varumärke med fokus på användarupplevelse och konvertering.</p>
-            </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll>
-            <div className="service-card">
-              <h3>SEO & Analytics</h3>
-              <p>Full SEO-optimering och Google Analytics-integration för att maximera din synlighet och följa upp besökare.</p>
-            </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll>
-            <div className="service-card">
-              <h3>E-handel & API</h3>
-              <p>Kraftfulla e-handelslösningar och API-integrationer för att koppla samman din webbplats med andra system.</p>
-            </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll>
-            <div className="service-card">
-              <h3>Support & Underhåll</h3>
-              <p>Upp till 12 månaders support för att säkerställa att din webbplats alltid fungerar optimalt.</p>
-            </div>
-          </AnimateOnScroll>
+          {categories.map((cat, idx) => (
+            <AnimateOnScroll key={cat.title}>
+              {cat.link === '#' ? (
+                <div className="service-card">
+                  <h3>{cat.title}</h3>
+                </div>
+              ) : (
+                <Link href={cat.link} legacyBehavior>
+                  <a className="service-card" style={{ textDecoration: 'none' }}>
+                    <h3>{cat.title}</h3>
+                  </a>
+                </Link>
+              )}
+            </AnimateOnScroll>
+          ))}
         </div>
       </div>
     </section>
