@@ -69,7 +69,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--overlay-dark);  
+  /*background: var(--overlay-dark);  */
   z-index: 1;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .wave-fill {
-  fill: var(--primary-black);
+  fill: var(--secondary-black);
 }
 
 .button-container {
@@ -295,7 +295,7 @@
   }
 
   .hero-content-text {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
   }
 
   .wave-divider svg {
