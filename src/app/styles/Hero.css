@@ -180,7 +180,6 @@
   height: .83em;     /* one line height */
 }
 
-/* Desktop/default: left-aligned */
 .rotating-keyword {
   position: absolute;
   left: 0;
@@ -190,20 +189,19 @@
   will-change: opacity, transform;
 }
 
+@media (max-width: 768px) {
+  .rotating-keyword {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* Ensure gradient text applies consistently */
 .rotating-keyword.text-primary {
   background-image: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-/* Center on mobile only */
-@media (max-width: 768px) {
-  .rotating-keyword {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 /* Responsiva stilar för Hero-sektionen */
