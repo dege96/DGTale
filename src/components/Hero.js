@@ -9,22 +9,40 @@ const Hero = () => {
     if (!wordRef.current) return;
 
     const words = ['WEBBUTVECKLING', 'SYSTEMLÖSNINGAR', 'AUTOMATION', 'DESIGN'];
-    let index = 0;
-
     const el = wordRef.current;
-    el.textContent = words[index];
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.8 });
-    tl.to(el, {
-      duration: 0.4,
-      opacity: 0,
-      ease: 'power1.out',
-      onComplete: () => {
-        index = (index + 1) % words.length;
-        el.textContent = words[index];
-      },
+    const typeWord = (word) => {
+      const proxy = { chars: 0 };
+      return gsap.to(proxy, {
+        chars: word.length,
+        duration: Math.max(0.8, word.length * 0.06),
+        ease: 'none',
+        onUpdate: () => {
+          const count = Math.floor(proxy.chars);
+          el.textContent = word.substring(0, count);
+        },
+      });
+    };
+
+    const eraseWord = (word) => {
+      const proxy = { chars: word.length };
+      return gsap.to(proxy, {
+        chars: 0,
+        duration: Math.max(0.6, word.length * 0.04),
+        ease: 'none',
+        onUpdate: () => {
+          const count = Math.floor(proxy.chars);
+          el.textContent = word.substring(0, count);
+        },
+      });
+    };
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.4 });
+    words.forEach((w) => {
+      tl.add(typeWord(w))
+        .to({}, { duration: 0.8 })
+        .add(eraseWord(w));
     });
-    tl.to(el, { duration: 0.4, opacity: 1, ease: 'power1.in' });
 
     return () => {
       tl.kill();
@@ -38,6 +56,7 @@ const Hero = () => {
             <div className="hero-content-text">SKRÄDDARSYDD OCH PROFESSIONELLT KODAD</div>
             <h1>
               <span ref={wordRef} className="animated-word text-primary">WEBBUTVECKLING</span>
+              <span className="caret" aria-hidden="true"></span>
               <br /> FÖR SMÅFÖRETAGARE
             </h1>
           <p>Vi designar och utvecklar lösningar, system och hemsidor som attraherar kunder och växer med din verksamhet.</p>
