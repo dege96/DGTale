@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gitt": "git add ." "git commit -m 'feat: add new feature'" "git push"
+    "gitt": "git add . && git commit -m \"feat: add new feature\" && git push"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
